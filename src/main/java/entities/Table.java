@@ -25,7 +25,7 @@ public class Table {
         this.orders = null;
         this.state = state;
     }
-    public int getNumber(int number){
+    public int getNumber(){
         return number;
     }
 

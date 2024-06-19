@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @Setter
 @AllArgsConstructor
 
-public class Orders {
+public class Order {
 
     private static int ordersQuantity = 0;
 
@@ -30,13 +30,13 @@ public class Orders {
     @Setter
     private ArrayList<Aliment> orders;
 
-    public Orders(){
+    public Order(){
         this.orderID = ordersQuantity++;
         this.orderState = orderState.PREPARATION;
         this.orders = new ArrayList<Aliment>();
     }
 
-    public Orders (OrderState orderState, Table tableXOrder, int places) {
+    public Order(OrderState orderState, Table tableXOrder, int places) {
         this.orderID = ordersQuantity++;
         this.orderState = orderState;
         this.tableXOrder = tableXOrder;
@@ -49,6 +49,14 @@ public class Orders {
         for (Aliment aliment : this.getOrders()) {
             check += aliment.getPrice();
         }
+        check+=coverPrice * this.tableXOrder.getPlaces();
+        return check;
+    }
+    public ArrayList<Aliment> getOrders(){
+        if (this.orders == null) {
+            this.orders = new ArrayList<Aliment>();
+        }
+        return this.orders;
     }
 
 }

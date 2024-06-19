@@ -1,9 +1,7 @@
 package com.matteomoscardini.U5_W1_D2;
 
-import entities.Drink;
+import entities.*;
 import entities.Menu;
-import entities.Pizza;
-import entities.Topping;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -125,5 +123,31 @@ public Topping mozzarella (){
         return menu;
    }
 
+  @Bean
+  Table table1() {
+        return new Table(1, 4, Table.state.FREE );
+    }
+    @Bean
+    Table table2(){
+        return new Table(2, 4, Table.state.FREE);
+    }
+    @Bean
+    Table table3(){
+        return new Table(3, 8, Table.state.FREE);
+    }
+    @Bean
+    Table table4() {
+        return new Table(4, 2, Table.state.RESERVED);
+    }
+
+    @Bean
+    public ArrayList<Table> tables (){
+        ArrayList<Table> tables = new ArrayList<>();
+        tables.add(table1());
+        tables.add(table2());
+        tables.add(table3());
+        tables.add(table4());
+        return tables;
+    }
 
 }

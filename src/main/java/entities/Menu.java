@@ -16,5 +16,23 @@ public class Menu {
     public void printMenu(){
         menu.forEach(aliment -> System.out.println(aliment));
     }
+    public void printOrdersMenu () {
+        int row = 1;
+        for (Aliment aliment : menu) {
+            if (!(aliment instanceof Topping)) {
+                System.out.println(row + ": " + aliment);
+                row++;
+            }
+        }
+    }
+    public Aliment getAliment (int alimentChosen) {
+        return menu.get(alimentChosen-1);
+    }
+    public ArrayList<Aliment> getMenuArrayList () {
+        return this.menu;
+    }
 
-}
+    }
+
+
+
