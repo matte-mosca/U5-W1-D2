@@ -47,7 +47,7 @@ public class Orders {
     public double checkCalculation (double coverPrice) {
         double check = 0;
         for (Aliment aliment : this.getOrders()) {
-            check += aliment.get
+            check += aliment.getPrice();
         }
     }
 

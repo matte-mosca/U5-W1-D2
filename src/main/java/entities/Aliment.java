@@ -1,6 +1,11 @@
 package entities;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @AllArgsConstructor
 public abstract class Aliment {
     protected String name;
